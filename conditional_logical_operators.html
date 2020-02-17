@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conditional logical operators</title>
+  <meta charset="utf-8">
+  <script>
+    var money = true;
+    var car = true;
+    var friend = "Martha";
+    if (money && car && friend == "Lola"){
+      alert("I go to the theater");
+    } else if (!money && car && friend == "Lola"){
+      alert("I go to the cinema");
+    } else if (!money && !car && friend == "Lola"){
+      alert("I stay in home");
+    } else if (!money && !car && friend == "Martha"){
+      alert("we watch television in the house");
+    } else if (!money && car && friend == "Martha"){
+      alert("we can go to football");
+    } else if (money && car && friend == "Martha"){
+      alert("let's go to the opera");
+    } else {
+      alert("I stay in home");
+    }
+  </script>
+</head>
+ <body></body>
+</html>
