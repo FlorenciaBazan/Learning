@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional Operator</title>
+  <script>
+    var amount = 1000;
+    var exchangeRate = 0;
+    var total = ( exchangeRate >= 0 ) ? amount * exchangeRate : amount;
+    var message = ( exchangeRate >= 0 ) ? ", exchange rate " + exchangeRate : "";
+    document.write("the total of your order is " + total + message);
+  </script>
+</head>
+ <body></body>
+</html>
