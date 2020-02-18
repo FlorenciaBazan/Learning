@@ -4,27 +4,28 @@
   <meta charset="UTF-8">
   <title>Conditional Switch</title>
   <script>
-    var maritalStatus = "single";
-    var message = "We invite you to a trip to Mexico";
+    var maritalStatus = prompt("What is your marital status?")
+    var message = "We invite you to a trip to Mexico ";
     var message2 = "Nothing";
-    switch(maritalStatus){
+    var downedMaritalStatus = maritalStatus.toLowerCase()
+    switch(downedMaritalStatus){
       case "single":
-        message2 = "Where you can meet more single people";
+        message2 = "where you can meet more single people";
         break;
       case "married":
-        message2 = "Where you can enjoy the family";
+        message2 = "where you can enjoy the family";
         break;
       case "divorced":
-        message2 = "You can forget your sorrows";
+        message2 = "you can forget your sorrows";
         break;
       case "widower":
-        message2 = "Where you can remember your best times";
+        message2 = "where you can remember your best times";
         break;
       case "conyugal":
-        message2 = "Where can you make that important decision";
+        message2 = "where can you make that important decision";
         break;
       default:
-        message2 = "Where you can define your personal situation";
+        message2 = "where you can define your personal situation";
         break;
     }
     message3 = "In an extraordinary experience in nature";
