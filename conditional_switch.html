@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional Switch</title>
+  <script>
+    var maritalStatus = "single";
+    var message = "We invite you to a trip to Mexico ";
+    var message2 = "Nothing";
+    switch(maritalStatus){
+      case "single":
+        message2 = "Where you can meet more single people ";
+        break;
+      case "married":
+        message2 = "Where you can enjoy the family ";
+        break;
+      case "divorced":
+        message2 = "You can forget your sorrows ";
+        break;
+      case "widower":
+        message2 = "Where you can remember your best times ";
+        break;
+      case "conyugal ":
+        message2 = "Where can you make that important decision decision ";
+        break;
+      default:
+        message2 = "Where you can define your personal situation ";
+        break;
+    }
+    message3 = "In an extraordinary experience in nature ";
+    document.write(message+message2+message3);
+
+  </script>
+
+</head>
+ <body></body>
+</html>
