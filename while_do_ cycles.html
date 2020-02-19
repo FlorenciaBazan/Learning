@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>While do cycles</title>
+  <script>
+    var password ="";
+    var i = 0;
+    do{
+      password = prompt("Enter your password");
+      i++;
+      if (password=="007"){
+        document.write("Welcome agent 007");
+        break;
+      }
+      if(i>3){
+        alert("Sorry you don't have access to the system");
+        break;
+      }
+    }while (true)
+  </script>
+</head>
+ <body></body>
+</html>
