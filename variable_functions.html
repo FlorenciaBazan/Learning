@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Functions | scope of the variables</title>
+  <script>
+    //Global variable
+    var amount = 10000;
+    var tax = .16;
+    var total = 0;
+    function calculateTotal(amount, tax){
+      var total = amount * (1+tax);
+      return total;
+    }
+    document.write("the value before the total function is " + total + "<br>");
+    document.write("the calculated value is " + calculateTotal(amount, tax) + "<br>");
+    document.write("the value after the total function is " + total + "<br>");
+  </script>
+</head>
+ <body></body>
+</html>
