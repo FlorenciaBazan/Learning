@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String | indexOf()</title>
+  <script>
+    var email1 = "pacoarce@gmail.com.mx";
+    var email2 = "pacoArce@gmail.com.mx";
+    //pacoArce@gmail.com.mx
+    //012345678
+    var pos = email2.indexOf("@");
+    console.log(pos);
+    var dot = email2.indexOf(".", pos);
+    console.log(dot);
+    //first validation
+    if(email1.length<10){
+      document.write("the password is very short<br>");
+    } else if (pos == -1){
+      document.write("the mail does not have the arroba");
+    } else if (dot ==-1){
+      document.write("email must have at least one dot")
+    } else if(!email1.toUpperCase() == email2.toLocaleUpperCase()) {
+      document.write("the keys do NOT match<br>");
+    } else {
+      document.write("the keys match<br>");
+    }
+
+  </script>
+</head>
+ <body></body>
+</html>
