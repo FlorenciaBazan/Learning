@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String | length, toUpperCase and toLowerCase</title>
+  <script>
+    var email1 = "pacoarce@gmail.com.mx";
+    var email2 = "pacoArce@gmail.com.mx";
+
+    document.write("the length of the key" + email1 + " is the " + email1.length+ " characters<br>");
+    if(email1.length<20){
+      document.write("the password is very short<br>");
+    } else {
+      document.write("the password is very adequate<br>");
+    }
+    if(email1.toUpperCase() == email2.toLocaleUpperCase()) {
+        document.write("the keys match<br>");
+      }else {
+          document.write("the keys do NOT match<br>");
+    }
+  </script>
+</head>
+ <body></body>
+</html>
