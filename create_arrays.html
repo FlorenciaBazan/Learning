@@ -7,6 +7,7 @@
     //associated variable
     var a = new Date();
     var days = new Array(7);
+    var months = [];
     //populate
     days[0] = "Sunday";
     days[1] = "Monday";
@@ -17,6 +18,23 @@
     days[6] = "Saturday";
     var r = days[a.getDay()];
     document.write("Today is the day "+r+"<br>");
+    //array by references or associates
+    months["January"] = 473633;
+    months["February"] = 6563463;
+    months["March"] = 635226;
+    document.write("Students enrolled in January "+months["January"]+"<br>");
+
+    for(students in months) {
+      document.write("Students enrolled in the month of "+students+" is the "+months[students]+"<br>");
+    }
+
+    document.write("<hr>");
+    var players = new Array("Pepe", "Roberto", "Agustin", "Thiago");
+    players.push("Juancito");
+
+    for (var i = 0; i < players.length; i++) {
+      document.write(players[i]+"<br>");
+    }
   </script>
 </head>
  <body></body>
