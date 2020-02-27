@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Create | Arrays</title>
+  <title>Array | Methods</title>
   <script>
     //associated variable
     var a = new Date();
@@ -35,6 +35,48 @@
     for (var i = 0; i < players.length; i++) {
       document.write(players[i]+"<br>");
     }
+
+    document.write("<hr>");
+    document.write("The players in alphabetical order are: "+players.sort()+"<br><br>");
+
+    document.write("<hr>");
+    document.write("The players in reverse order are: "+players.reverse()+"<br><br>");
+
+    document.write("<hr>");
+    players.push("Carlitos", "Messi");
+    document.write("The new player list is: "+players+"<br><br>");
+
+    //pop() delete the last item and optionally we can retrieve it.
+    document.write("<hr>");
+    var latest = players.pop();
+    document.write("The new player list is: "+players+"<br><br>");
+    document.write ("The kicked player is "+latest);
+
+    //unshift add an item to the beginning of the array.
+    document.write("<hr>");
+    players.unshift("Morena");
+    document.write("The new player list is: "+players+"<br><br>");
+
+    //shift extract the first element and optionally we can retrieve it.
+    document.write("<hr>");
+    var first = players.shift();
+    document.write("The new player list is: "+players+"<br><br>");
+    document.write("The best player is "+first);
+
+    //splice() we extract the elements of the array from the "n" element.
+    //we extract "m" element
+    document.write("<hr>");
+    var kicked = players.splice(1,2);
+    document.write("The new player list is: "+players+"<br><br>");
+    document.write("The list of expelled items is: "+kicked);
+
+    //splice() add "n" elements after the indicated index.
+    document.write("<hr>");
+    players.splice(1,0,"Armani","Cristiano");
+    document.write("The new player list is: "+players+"<br><br>");
+
+    //join() concatenate an array by means of a separator.
+    document.write("The new player list is; "+players.join(" * "));
   </script>
 </head>
  <body></body>
