@@ -4,8 +4,21 @@
   <meta charset="UTF-8">
   <title>String | slice() and substring()</title>
   <script>
+
+    function invalidString(string) {
+      var invalid = "áéíóúÁÉÍÓÚÑñ ()<>,;:[]%&";
+      var flag = false;
+      for(i=0; i < invalid.length; i++) {
+        var c = invalid.charAt(i);
+        if(string.indexOf(c)!=-1) {
+          flag = true;
+          break;
+        }
+      }
+      return flag;
+    }
     var email1 = "pacoarce@gmail.com.mx";
-    var email2 = "pacoArce@gmail.com.mx";
+    var email2 = "pacoárce@gmail.com.mx";
     //pacoArce@gmail.com.mx
     //012345678
     var pos = email2.indexOf("@");
@@ -18,7 +31,9 @@
     } else if (pos == -1){
       document.write("the mail does not have the arroba");
     } else if (dot ==-1){
-      document.write("email must have at least one dot")
+      document.write("email must have at least one dot");
+    } else if (invalidString(email2)){
+      document.write("email have invalid characters");
     } else if(!email1.toUpperCase() == email2.toLocaleUpperCase()) {
       document.write("the keys do NOT match<br>");
     } else {
