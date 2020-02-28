@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Object | Array</title>
+  <script>
+    //object
+    var student = new Object();
+
+    //populate an object.
+    student.name = "Agustin";
+    student.surname = "Bazan";
+    student.age = 17;
+    student.employee = "salesman"
+
+    //we assign an array.
+    student.ratings = [7,8,9,10];
+
+    //assign an object.
+    student.address = {street:"Roberto Koch", num:99, city:"Pilar"};
+
+    document.write("Student's name: "+student.name+ " "+student.surname+"<br>");
+    document.write("First grade: "+student.ratings[0]+"<br>");
+    document.write("Address: "+student.address.street+", "+student.address.num+", "+student.address.city+"<br>");
+  </script>
+</head>
+ <body></body>
+</html>
