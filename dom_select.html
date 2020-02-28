@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Doom Document Object Model</title>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p>the acronym dom means:</p>
+  <ul id="dom">
+    <li>Document</li>
+    <li>Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+  <script>
+    var misLI = document.getElementsByTagName("li");
+    document.write("The number of items in the list are: " + misLI.length + "<br>");
+
+    //we retrieve an item by its identifier.
+    var miDOM = document.getElementById("dom");
+    document.write("The number of nodes in the list is: " + miDOM.childNodes.length + " <br>");
+
+    //node content
+    document.write("Node content is: " + miDOM.innerHTML + "<br>");
+
+    //we get the type of node
+    document.write("The type of node is: " + miDOM.nodeType + "<br>");
+  </script>
+</html>
