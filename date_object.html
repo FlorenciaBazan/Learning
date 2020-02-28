@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date | object</title>
+  <script>
+    var days = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+    var months = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    var today = new Date();
+    var day = today.getDay();
+    var dayMonth = today.getDate();
+    var month = today.getMonth();
+    var year = today.getFullYear();
+    var hour = today.getHours();
+    var minutes = today.getMinutes();
+    var sec = today.getSeconds();
+    var mil = today.getMilliseconds();
+
+    document.write("Today is the day "+dayMonth+" from "+months[month]+" of the "+year+" And it is "+days[day]+" and it's the "+hour+":"+minutes+":"+sec+" ("+mil+") mil");
+  </script>
+</head>
+  <body></body>
+</html>
