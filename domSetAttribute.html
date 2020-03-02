@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model</title>
+  <script>
+    window.onload = function(){
+      var myLI = document.getElementsByTagName("li");
+      console.log("The number of list element type is of: " + myLI.length);
+
+      var myDOM = document.getElementById("dom");
+      console.log("The node type of DOM is: " + myDOM.nodeType);
+
+      myDOM.setAttribute("class", "red");
+    }
+  </script>
+  <style>
+    .red {
+      color: red;
+      font-size: 3em;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p>the acronym dom means:</p>
+  <ul id="dom">
+    <li>Document</li>
+    <li>Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+</html>
