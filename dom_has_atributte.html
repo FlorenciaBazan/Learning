@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model</title>
+  <script>
+    window.onload = function(){
+      var unexistent = document.querySelector(".unexistent");
+      if (unexistent.hasAttribute("class")) {
+        unexistent.removeAttribute("class");
+      } else {
+        console.log("Unexistent class");
+      }
+    }
+  </script>
+  <style>
+    h1 {
+      color: blue;
+    }
+    .red {
+     color: red;
+    }
+    .green {
+      color: green;
+    }
+    #yellow {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p class="green">The acronym dom means:</p>
+  <ul id="yellow">
+    <li class="red">Document</li>
+    <li>Object</li>
+    <li class="red unexistent">Model</li>
+  </ul>
+</body>
+</html>
