@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object | QuerySelector()</title>
+  <script>
+    window.onload = function(){
+      //Select by class
+      var reds = document.querySelectorAll(".red");
+      console.log("We have " + reds.length + " red elements");
+
+      //select by identifier
+      var yellow = document.querySelectorAll("#yellow");
+      console.log("We have " + yellow.length + "  elements yellow");
+
+      //we select by attributes
+      var green = document.querySelectorAll("p[class]");
+      console.log("We have " + green. length + "  elements green");
+
+      //we select tags
+      var paragraph = document.querySelectorAll("p");
+      console.log("We have " + paragraph.length + " paragraph");
+
+      //we select by dummy class
+      var unexistant = document.querySelectorAll(".unexistant");
+      console.log("We have " + unexistant.length + " class elements 'unexistant'");
+    }
+  </script>
+  <style>
+    h1 {
+      color: blue;
+    }
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+    #yellow {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p class="green">DOM acronyms means:</p>
+  <p>this is another paragraph</p>
+
+  <ul id="yellow">
+    <li class="red">Document</li>
+    <li>Object</li>
+    <li class="red unexistant">Model</li>
+  </ul>
+</body>
+</html>
