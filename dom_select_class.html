@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    window.onload = function (){
+      //we select the elements with the red class
+      var reds = document.getElementsByClassName("red");
+      console.log("element that contain the 'red' class are: "+reds.length);
+      for (var i = 0; i < reds.length; i++) {
+          console.log("The content of the nodes is :"+reds[i].innerHTML);
+      }
+    }
+  </script>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p>DOM acronyms means:</p>
+  <ul>
+    <li class="red">Document</li>
+    <li>Object</li>
+    <li class="red">Model</li>
+  </ul>
+</body>
+</html>
