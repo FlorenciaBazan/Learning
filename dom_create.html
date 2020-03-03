@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM | Create Nodes</title>
+  <script>
+    window.onload = function(){
+      //we create an arrangement
+      var texts = new Array();
+      texts.push("Mariela was born from sea foam...");
+      texts.push("A golf ball can be more lethal than a bullet...");
+      texts.push("The bees have emotions...");
+      texts.push("Art is good for health...");
+      texts.push("Potatoes lower blood pressure...");
+      texts.push("JavaScript is the most used language in the world...");
+
+      //we create a random number
+      var num = Math.floor(Math.random()*texts.length);
+
+      //1)we create a node
+      var title = document.createElement("h1");
+      var text = document.createElement("p");
+
+      //2)populate content
+      title.innerHTML = "¿Did you know...?";
+      text.innerHTML = texts[num];
+
+      //3)we add to the document display list
+      document.getElementById("string").appendChild(title);
+      document.getElementById("string").appendChild(text);
+    }
+  </script>
+</head>
+<body>
+  <div id="string"></div>
+</body>
+</html>
