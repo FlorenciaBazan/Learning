@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model</title>
+  <script>
+    window.onload = function(){
+      var mid = document.getElementById("mid");
+      mid.previousElementSibling.setAttribute("class","red");
+      mid.nextElementSibling.setAttribute("class","green");
+      //mid.setAttribute("class","blue");
+      mid.parentNode.parentNode.setAttribute("class","blue");
+    }
+  </script>
+  <style>
+    .red{color: red;}
+    .green{color: green;}
+    .blue{color: blue;}
+  </style>
+</head>
+<body>
+  <h1>This is an HTML page</h1>
+  <p>The acronym DOM means:</p>
+  <ul>
+    <li>Document</li>
+    <li id="mid">Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+</html>
