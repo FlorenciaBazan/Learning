@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model</title>
+  <script>
+    window.onload = function(){
+      //We retrieve information from a node
+      var d = document.querySelector(".red").innerHTML;
+      console.log("The value of the red node is: ",d);
+      //modifying the content
+      document.querySelector(".red").innerHTML = "<b>"+d+"</b>";
+      //delete the content
+      document.querySelector(".red").innerHTML = "";
+    }
+  </script>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an html page</h1>
+  <p>The acronym dom means:</p>
+  <ul>
+    <li class="red">Document</li>
+    <li>Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+</html>
