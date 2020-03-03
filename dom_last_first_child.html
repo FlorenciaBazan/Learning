@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model</title>
+  <script>
+    window.onload = function(){
+      var list = document.querySelector("ul");
+      var node = list.firstChild;
+      var last = list.lastChild;
+
+      while(node.nodeName == "#text") node = node.nextElementSibling;
+      while(last.nodeName == "#text") last = last.previousSibling;
+
+      // select the first of the node childs
+      node.setAttribute("class","red");
+      last.setAttribute("class","green");
+    }
+  </script>
+  <style>
+    .red {
+      color: red;
+    }
+    .green{
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is an HTML page</h1>
+  <p>The acronym DOM means:</p>
+  <ul>
+    <li>Document</li>
+    <li>Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+</html>
