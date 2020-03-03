@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    window.onload = function (){
+      var mid = document.getElementById("mid");
+      do {
+        console.log(mid.nodeName, mid.innerHTML);
+        mid = mid.nextElementSibling;
+      }while (mid)
+    }
+  </script>
+</head>
+<body>
+  <h1>This is an HTML page</h1>
+  <p>The acronym DOM means:</p>
+  <ul>
+    <li>Document</li>
+    <li id="mid">Object</li>
+    some text
+    <li>Model</li>
+    more text
+  </ul>
+</body>
+</html>
