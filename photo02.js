@@ -3,9 +3,9 @@ window.onload = function() {
   //Listener
   photos.addEventListener("click",function(e){
     if (e.target.tagName === "IMG"){
-      console.log("I press an image");
+      console.log("I pressed an image");
     } else {
-      console.log("I don't press an image");
+      console.log("I didn't press an image");
     }
   }, false);
 }
