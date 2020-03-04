@@ -19,6 +19,22 @@ window.onload = function() {
       blackBackground.style.top = window.pageYOffset+"px";
       blackBackground.style.left = window.pageXOffset+"px";
 
+      //create image
+      var smallFile = e.target.src;
+
+      var file = smallFile.substr(smallFile.length-10, 10);
+
+      var bigImage = "fondos/"+file;
+
+      var image = document.createElement("img");
+      image.id = "image";
+      image.src = bigImage;
+      image.style.display = "block";
+      image.style.position = "absolute";
+
+      image.addEventListener("load", function(){
+        blackBackground.appendChild(image);
+      },false);
 
     } else {
       console.log("I didn't press an image");
