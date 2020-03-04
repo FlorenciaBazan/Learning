@@ -33,11 +33,26 @@ window.onload = function() {
       image.style.position = "absolute";
 
       image.addEventListener("load", function(){
+        center(this);
         blackBackground.appendChild(image);
       },false);
+
+      image.addEventListener("click", function(){
+        if(blackBackground){
+          blackBackground.parentNode.removeChild(blackBackground);
+        }
+      }, false);
 
     } else {
       console.log("I didn't press an image");
     }
   }, false);
+  function center(image){
+    var xx = (window.innerWidth - image.width)/2;
+    var yy = (window.innerHeight - image.height)/2;
+    image.style.top = yy+"px";
+    image.style.left = xx+"px";
+    return image;
+
+  }
 }
