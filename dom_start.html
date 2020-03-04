@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Document Object Model | Remove()</title>
+  <script>
+    window.onload = function(){
+      var mid = document.getElementById("mid");
+      var ul = document.querySelector("ul");
+      var ant = ul.removeChild(mid);
+      console.log(ant.nodeName);
+      var ul = document.querySelector("ul");
+      while(ul.firstChild) ul.removeChild(ul.firstChild);
+    }
+  </script>
+</head>
+<body>
+  <h1>This is an HTML page</h1>
+  <p>The acronym DOM means:</p>
+  <ul>
+    <li>Document</li>
+    <li id="mid">Object</li>
+    <li>Model</li>
+  </ul>
+</body>
+</html>
