@@ -5,12 +5,10 @@
   <title>DOM Document Object Model | Remove()</title>
   <script>
     window.onload = function(){
-      /*
       var mid = document.getElementById("mid");
       var ul = document.querySelector("ul");
       var ant = ul.removeChild(mid);
       console.log(ant.nodeName);
-      */
       var ul = document.querySelector("ul");
       while(ul.firstChild) ul.removeChild(ul.firstChild);
     }
