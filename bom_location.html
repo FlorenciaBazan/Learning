@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BOM | Location</title>
+  <script>
+    document.write("URL: " + location.href + "<br>");
+    document.write("Hostname: " + location.hostname + "<br>");
+    document.write("Route: " + location.pathname + "<br>");
+    document.write("Protocol: " + location.protocol + "<br>");
+    document.write("Port: " + location.port + "<br>");
+    function jump(){
+      location.assign("http://www.google.com");
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="go google" onclick="jump()" />
+</body>
+</html>
