@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOM | window</title>
+	<meta charset="utf-8">
+	<script>
+		var newPopUp;
+		function createWindow(){
+			newPopUp = window.open("","New Window", "status, height=200, width=300");
+		}
+		function write(){
+			if (newPopUp.close) {
+				createWindow();
+			}
+			newPopUp.focus();
+			var content = "<html><head><title>New Window</title></head>";
+			content += "<body color='coral'><h1>Hola desde JavaScript</h1></body></html>";
+			newPopUp.window.status = "Welcome";
+			newPopUp.document.write(content);
+			newPopUp.document.close();
+		}
+	</script>
+</head>
+<body onload="createWindow()">
+	<input type="submit" value="Write in a window" onClick="write()">
+</body>
+</html>
