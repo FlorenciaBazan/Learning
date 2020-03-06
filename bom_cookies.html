@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BOM | Cookies</title>
+  <script>
+    function readCookie(Cookies){
+      var user = Cookies + "=";
+      var cookiesclean = decodeURIComponent(document.cookie);
+      var ca = cookiesclean.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        c = ca[i];
+        while(c.charAt(0) == ""){
+          c = c.substring(1);
+        }
+        if(c.indexOf(user) == 0){
+          return c.substring(user.length, c.length);
+        }
+        return "";
+      }
+    }
+    function saveCookie(nameCookie, valueCookie, days){
+      var d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = nameCookie + "=" + valueCookie + ";" + expires + ";path=/";
+    }
+    window.onload = function(){
+      var user = readCookie("user");
+      if (user == "") {
+        user = prompt("What is your name?");
+        if(user != "" && user != null){
+          saveCookie("user", user, 3);
+        }
+      } else {
+        alert("Welcome " + user + " to our page");
+      }
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
