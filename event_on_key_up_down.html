@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta>
+  <title>Event | onkeydown and onkeyup</title>
+  <script>
+    var box;
+    window.onload = function(){
+      box = document.getElementById("box");
+      // We detect the event onkeyup
+      box.onkeyup = function(){
+        var value = box.value;
+        box.value = value.toUpperCase();
+        var exit = "";
+        for(var i = 0; i < value.length; i++) {
+          exit = value[i]+exit;
+        }
+        document.getElementById("exit").innerHTML = exit.toLowerCase();
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="box" id="box"/>
+  <p id="exit"></p>
+</body>
+</html>
