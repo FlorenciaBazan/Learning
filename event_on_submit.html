@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event | onSubmit</title>
+</head>
+<script>
+  var form, password1, password2;
+  window.onload = function(){
+    form = document.getElementById("form");
+    password1 = document.getElementById("password1");
+    password2 = document.getElementById("password2");
+
+    form.onsubmit = function(){
+      var value1 = password1.value;
+      var value2 = password2.value;
+      if (value1 == "" || value2 == ""){
+        alert("passwords can't be empty");
+      } else if (value1!==value2) {
+        alert("the passwords don't match");
+      } else{
+        alert("the passwords are correct");
+        return true;
+      }
+      return false;
+    }
+  }
+</script>
+<body>
+<form id="form" name="form" method="post" action="save.php">
+  <p>
+    <label for="password1">password1</label>
+    <input type="password"  name="password1" id="password1">
+  </p>
+  <p>
+    <label for="password2">password1</label>
+    <input type="password"  name="password2" id="password2">
+  </p>
+  <p>
+    <input type="submit" name="send" id="send" value="Send">
+  </p>
+</form>
+</body>
+</html>
