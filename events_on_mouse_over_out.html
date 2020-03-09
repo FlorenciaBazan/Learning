@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Events | onmuoseover onmouseout</title>
+  <script>
+    var athenea, myBody;
+    window.onload = function(){
+      athenea = document.getElementById("athena");
+      myBody = document.getElementsByTagName("body");
+
+      athenea.onclick = function (){
+        alert("Athena goddess of wisdom");
+      }
+      athenea.onmouseover = function(){
+        myBody[0].setAttribute("class","red");
+      }
+      athenea.onmouseout = function(){
+        myBody[0].setAttribute("class","white");
+      }
+    }
+  </script>
+  <style>
+    .red {
+      background-color: red;
+    }
+    .white {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <img src="/home/florencia/Learning/imagenes/atenea.jpg" id="athena"/>
+</body>
+</html>
