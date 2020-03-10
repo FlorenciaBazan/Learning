@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Events | onblur and onfocus</title>
+  <script>
+    var field1, field2;
+    window.onload = function(){
+      //references to the elements
+      field1 = document.getElementById("field1");
+      field2 = document.getElementById("field2");
+
+      //listener
+      field1.onfocus = function(){
+        start(this);
+      }
+      field1.onblur = function(){
+        end(this);
+      }
+      field2.onfocus = function(){
+        start(this);
+      }
+      field2.onblur = function(){
+        end(this);
+      }
+    }
+    function start(field){
+      field.setAttribute("class", "start")
+    }
+    function end(field){
+      field.setAttribute("class", "end")
+    }
+  </script>
+</head>
+<style>
+  .start{
+    background-color: #ff9;
+  }
+  .end{
+    background-color: #fff;
+  }
+</style>
+<body>
+  <p>
+    <label for="field1">Field1</label>
+    <input type="text" name="field1" id="field1">
+  </p>
+
+  <p>
+    <label for="field2">Field2</label>
+    <input type="text" name="field2" id="field2">
+  </p>
+</body>
+</html>

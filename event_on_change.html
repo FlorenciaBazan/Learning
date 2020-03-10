@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event | onchange</title>
+  <script>
+    window.onload = function() {
+      document.getElementById("color").onchange = function(e){
+        var color = this.value;
+        // alert(color);
+        var myBody = document.getElementsByTagName("body");
+        myBody[0].setAttribute("class",color);
+      }
+    }
+  </script>
+  <style>
+    .black{
+      background-color: black;
+    }
+    .white{
+      background-color: white;
+    }
+    .blue{
+      background-color:blue;
+    }
+    .green{
+      background-color:green;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+    .orange{
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <p>Which color do you prefer?</p>
+  <select id="color">
+    <option value="black">Black</option>
+    <option value="white">white</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="yellow">Yellow</option>
+    <option value="orange">Orange</option>
+  </select>
+</body>
+</html>

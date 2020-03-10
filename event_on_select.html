@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Events | onselect</title>
+  <script>
+    var boxes, myBody;
+    window.onload = function(){
+      boxes = document.getElementsByTagName("input");
+      myBody = document.getElementsByTagName("body");
+
+      boxes[0].onselect = function(){
+        myBody[0].setAttribute("class","red");
+      }
+      boxes[1].onselect = function(){
+        myBody[0].setAttribute("class","green");
+      }
+      boxes[2].onselect = function(){
+        myBody[0].setAttribute("class","blue");
+      }
+      boxes[3].onselect = function(){
+        myBody[0].setAttribute("class","yellow");
+      }
+    }
+  </script>
+  <style>
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+    .blue {
+      background-color: blue;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <p><input type="text" id="red" value="red"></p>
+  <p><input type="text" id="green" value="green"></p>
+  <p><input type="text" id="blue" value="blue"></p>
+  <p><input type="text" id="yellow" value="yellow"></p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Event | onmousemove</title>
+  <script>
+    window.onload = function(){
+      document.getElementById("frame").onmousemove = function(e){
+        var x = e.clientX;
+        var y = e.clientY;
+        var coordinates = "Coordinates ("+x+", "+y+")";
+        document.getElementById("exit").innerHTML = coordinates;
+      }
+      document.getElementById("frame").onmouseout = function(e){
+        document.getElementById("exit").innerHTML = "";
+      }
+    }
+  </script>
+  <style>
+    #frame{
+      width: 199px;
+      height: 99px;
+      border: 1px solid black;
+    }
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="frame"></div>
+  <p id="exit"></p>
+</body>
+</html>

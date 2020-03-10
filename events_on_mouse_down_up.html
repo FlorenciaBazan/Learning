@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Events | onmuosedown onmouseup</title>
+  <script>
+    var athenea, myBody;
+    window.onload = function(){
+      athenea = document.getElementById("athenea");
+      myBody = document.getElementsByTagName("body");
+      athenea.onmousedown = function(){
+        myBody[0].setAttribute("class","orange");
+      }
+      athenea.onmouseup = function(){
+        myBody[0].setAttribute("class","white");
+      }
+    }
+  </script>
+  <style>
+    .orange{
+      background-color: orange;
+    }
+    .white{
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <img src="/home/florencia/Learning/imagenes/atenea.jpg" id="athenea"/>
+</body>
+</html>
