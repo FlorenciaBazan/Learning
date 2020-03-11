@@ -26,6 +26,7 @@
     function changeImage(){
       var numImage = image.length;
       var num = Math.floor(Math.random()* numImage);
+      console.log("Foto: " + num);
       document.images['image'].src = "fondos/"+image[num];
       var t = setTimeout("changeImage()","2500");
     }
