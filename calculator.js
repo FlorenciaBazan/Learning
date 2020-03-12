@@ -45,18 +45,48 @@ function deleteF(){
 function deleteCharacter(){
   let back = document.form.value.value;
   let new1 = back.substring(0,back.length-1);
-  document.getElementById("value").value=new1;
+  document.getElementById("value").value = new1;
 }
 function calculate(){
   let result = eval(document.form.value.value);
-  if (result=="Infinity"){
+  if (result == "Infinity"){
     document.form.value.value = "We can't divide by zero"
   }else {
     document.form.value.value = result;
   }
 }
 function validateSign(n){
-  console.log("validateSign");
+  let back = document.form.value.value;
+  if(back != ""){
+    document.getElementById("value").value = back + n;
+    string = document.getElementById("value").value;
+
+    let record = 0;
+    let equal = 1;
+    for (var a = 1; a < string.length; a++) {
+      if(string.charAt(a) == "+" ||
+      string.charAt(a) == "-" ||
+      string.charAt(a) == "*" ||
+      string.charAt(a) == "." ||
+      string.charAt(a) == "/") {
+        equal++;
+      } else {
+        if (equal > record) {
+          record = equal;
+        } else {
+          equal = 1;
+        }
+      }
+      if (equal > record){
+        record = equal
+      }
+      if(record > 2) {
+        var number = string.substring(0,string.length-1);
+        document.getElementById("value").value = number;
+        record = 0; equal = 1;
+      }
+    }
+  }
 }
 function back(n){
   let back = document.form.value.value;
