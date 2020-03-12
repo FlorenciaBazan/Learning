@@ -10,9 +10,9 @@ window.onload = function(){
       let n = this.value;
       if (n=="C"){
         deleteF();
-      } else if(n=="<"){
+      } else if(n == "<"){
         deleteCharacter();
-      } else if (n=="=") {
+      } else if (n == "=") {
         calculate();
       } else if (signs.indexOf(n)>-1){
         validateSign(n);
@@ -40,17 +40,26 @@ function numbers(e){
   }
 }
 function deleteF(){
-  console.log("delete");
+  document.form.value.value = "";
 }
 function deleteCharacter(){
-  console.log("delete character");
+  let back = document.form.value.value;
+  let new1 = back.substring(0,back.length-1);
+  document.getElementById("value").value=new1;
 }
 function calculate(){
-  console.log("calculate")
+  let result = eval(document.form.value.value);
+  if (result=="Infinity"){
+    document.form.value.value = "We can't divide by zero"
+  }else {
+    document.form.value.value = result;
+  }
 }
 function validateSign(n){
   console.log("validateSign");
 }
 function back(n){
-  console.log("return number");
+  let back = document.form.value.value;
+  let new1 = back+n;
+  document.getElementById("value").value=new1;
 }
