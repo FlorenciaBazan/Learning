@@ -46,5 +46,29 @@ var cards = new Array(
   function turnCard() {
     var event = window.event;
     play2 = event.target.dataset.value;
-    alert("Evento " + event.target.id + " Jugada " + play2);
-  }
+    play2Id = event.target.id;
+    if (play1 !== ""){
+
+      if (play1 === play2 &&
+        cards[parseInt(play2Id).select] != true &&
+        cards[parseInt(play1Id).select] != true
+        ) {
+          cards[parseInt(play2Id).select] = true;
+          cards[parseInt(play1Id).select] = true;
+
+          changeColor(play2Id, "blue", play2);
+        } else {
+
+          changeColor(play2Id, "blue", play2);
+        }
+
+      }else if (play2 !== "void"){
+        changeColor(play2Id, "blue", play2);
+        play1 = play2;
+        play1Id = play2Id;
+      }
+    }
+    function changeColor(position, color, number){
+      document.getElementById(position.toString()).style.backgroundColor = color;
+      document.getElementById(position.toString()).innerHTML = number;
+    }
