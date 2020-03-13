@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BOM | Size</title>
+  <script>
+    window.onload = function(){
+      var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      document.getElementById("exit").innerHTML = "viewport dimensions are "+w+" width and "+h+
+                                                  " height in pixels and the external dimensions are "+window.outerWidth+
+                                                  " heigth and "+window.outerHeight+" width in pixels";
+    }
+  </script>
+</head>
+<body>
+  <div id="exit"></div>
+</body>
+</html>

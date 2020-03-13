@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clock</title>
+  <script>
+    window.onload = function() {
+      clock("March 12 2020 16:15:01 GMT-0300","clock","Booom");
+    }
+    function clock(endDate, elem, message){
+      var clock = document.getElementById(elem);
+      var idClock = setInterval(function(){
+        var t = unfoldClock(endDate);
+        clock.innerHTML = t.remainingDays+":"+t.remainingHours+":"+t.remainingMinutes+":"+t.remainingSeconds;
+        if(t.remainingTime <= 1){
+          clearInterval(idClock);
+          clock.innerHTML = message;
+        }
+      }, 1000);
+    }
+    function unfoldClock(endDate) {
+      var now = new Date();
+      var remainingTime = (new Date(endDate)-now+1000)/1000;
+      var remainingSeconds = ('0'+Math.floor(remainingTime%60)).slice(-2);
+      var remainingMinutes = ('0'+Math.floor(remainingTime/60%60)).slice(-2);
+      var remainingHours = ('0'+Math.floor(remainingTime/3600%24)).slice(-2);
+      var remainingDays = Math.floor(remainingTime/(3600*24));
+      return {
+        remainingTime:remainingTime,
+        remainingSeconds:remainingSeconds,
+        remainingMinutes:remainingMinutes,
+        remainingHours:remainingHours,
+        remainingDays:remainingDays
+      }
+    }
+  </script>
+  <style type="text/css">
+    #clock{
+      font-size: 5em;
+      text-align: center;
+      margin: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+</body>
+</html>

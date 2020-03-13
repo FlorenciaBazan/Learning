@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Number</title>
+  <script>
+    var number = Math.floor(Math.random()*100)+1;
+    var tries = 1;
+    do{
+      myNumber = prompt("Guess the magic number between 1 and 100");
+      if(number>myNumber){
+        document.write(tries+")The number "+myNumber+" is less than the number searched<br>");
+      } else if(number<myNumber){
+        document.write(tries+")The number "+myNumber+" is greater than the number sought<br>");
+      } else {
+        document.write(tries+")The magic number is "+number+" congratulations<br>");
+        break;
+      }
+      tries++;
+      if(tries>6){
+        document.write("sorry you are too bad to guess, the magic number was: "+number);
+        break;
+      }
+    } while(true)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

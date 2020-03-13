@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <style>
+    body{
+      width: 600px;
+      margin: 0 auto;
+    }
+    h2{
+      text-align: center;
+    }
+  </style>
+  <script>
+    var image = new Array();
+    image.push("fondo1.jpg");
+    image.push("fondo2.jpg");
+    image.push("fondo3.jpg");
+    image.push("fondo4.jpg");
+    image.push("fondo5.jpg");
+
+    window.onload = function(){
+      changeImage();
+    }
+    function changeImage(){
+      var numImage = image.length;
+      var num = Math.floor(Math.random()* numImage);
+      console.log("Foto: " + num);
+      document.images['image'].src = "fondos/"+image[num];
+      var t = setTimeout("changeImage()","2500");
+    }
+  </script>
+</head>
+<body>
+  <h2>Greek art passage</h2>
+  <img id="image" src="fondos/fondo1.jpg" width="600"/>
+</body>
+</html>

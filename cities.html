@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cities</title>
+  <script>
+    var countries_array = new Array("Select a country", "Argentina", "Spain", "Mexico");
+    var cities0_array = new Array("Select a city");
+    var cities1_array = new Array("Select a city", "Buenos Aires", "Salta", "Mendoza");
+    var cities2_array = new Array("Select a city", "Madrid", "Valencia", "Barcelona");
+    var cities3_array = new Array("Select a city", "D.F", "Guadalajara", "Monterrey");
+
+    var cities_array = new Array(cities0_array, cities1_array, cities2_array, cities3_array);
+    var country_cb, city_cb;
+
+    window.onload = function(){
+      country_cb = document.getElementById("country");
+
+      while(country_cb.lenght) country_cb.remove(0);
+
+      for(i=0; i<countries_array.length; i++){
+        option(country_cb, i, countries_array[i]);
+      }
+      country_cb.onchange = function(){
+
+        city_cb = document.getElementById("city");
+
+        while(city_cb.lenght) city_cb.remove(0);
+
+
+        myCity = country_cb.selectedIndex;
+
+        for(i=0; i<cities_array[myCity].length; i++){
+          option(city_cb, i, cities_array[myCity][i]);
+        }
+      }
+      function option(combo, index, value){
+        var myOption = new Option(value, String(i));
+        eval(combo.options[index]=myOption);
+      }
+    }
+  </script>
+</head>
+<body>
+  <select name="country" id="country">
+    <option value="nothing">Select a country</option>
+  </select>
+  <select name="city" id="city">
+    <option value="nothing">Select a city</option>
+  </select>
+</body>
+</html>

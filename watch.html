@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Watch</title>
+  <style>
+    body{
+      width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+  <script>
+    var idTime;
+    var flag = false;
+    window.onload = function(){
+      stopWatch();
+      displayDate();
+      displayHour();
+    }
+    function stopWatch(){
+      if(flag)clearTimeout(idTime);
+      flag = false;
+    }
+    function displayDate(){
+      var today = new Date();
+      var myDate = ""+today.getDate()+"/";
+      myDate += (today.getMonth()+1)+"/";
+      myDate += today.getFullYear()+"";
+      document.watch.date.value = myDate;
+    }
+    function displayHour(){
+      var today = new Date();
+      var hrs = today.getHours();
+      var mins = today.getMinutes();
+      var sec = today.getSeconds();
+
+      var string = String((hrs>12)? hrs-12:hrs);
+      string += ((mins<10)? ":0" : ":")+mins;
+      string += ((sec<10)? ":0" : ":")+sec;
+      string += ((hrs>10)? "PM" : " AM");
+
+      document.watch.hour.value = string;
+
+      idTime = setTimeout("displayHour()",1000);
+      flag = true;
+    }
+  </script>
+</head>
+<body>
+  <div id="watch">
+    <form name="watch" onSubmit="">
+      <p>
+        Today is: <input type="text" name="date" id="date" size="12" value="">
+        and the time is
+        <input type="text" name="hour" id="hour" size="12" value="">
+      </p>
+    </form>
+  </div>
+</body>
+</html>
