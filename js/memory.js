@@ -15,24 +15,36 @@ var cards = new Array(
   {name: '14', select: false},
   {name: '15', select: false},
   {name: '16', select: false}
-)
+  )
 
-var tries = 0;
-var play1 = play2 = "";
-var play1Id = play2Id = "";
-var tokens = 16;
+  var tries = 0;
+  var play1 = play2 = "";
+  var play1Id = play2Id = "";
+  var tokens = 16;
 
-window.onload = function() {
-  document.getElementById("start").onclick = startGame;
-  for(var i = 0; i < tokens; i++) {
-    document.getElementById(i.toString()).onclick = turnCard;
+  window.onload = function() {
+    document.getElementById("start").onclick = startGame;
+    for(var i = 0; i < tokens; i++) {
+      document.getElementById(i.toString()).onclick = turnCard;
+    }
   }
-}
 
-function startGame() {
-  alert("Start game.");
-}
+  function startGame() {
+    var board = document.getElementById("game");
+    board.style.opacity = 1;
 
-function turnCard() {
-  alert("Turn card.");
-}
+    cards.sort(function(){return Math.random() - 0.5});
+
+    for(var i = 0; i < tokens; i++) {
+      var card = cards[i].name;
+      var data = document.getElementById(i.toString());
+      data.dataset.value = card;
+      console.log(data.dataset.value);
+    }
+  }
+
+  function turnCard() {
+    var event = window.event;
+    play2 = event.target.dataset.value;
+    alert("Evento " + event.target.id + " Jugada " + play2);
+  }
