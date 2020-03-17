@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regular Expressions</title>
+  <script>
+    var re = /(\w+)\s(\w+)/;
+    var str = "Pedro Picapiedra";
+    var nombre = str.replace(re,"$2, $1");
+    console.log (str, nombre);
+  </script>
+</head>
+  <body></body>
+</html>
