@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    var str = "In the clara water, which sprouts in the Doña Clara fountain";
+    var res = str.replace(/clara/g, "frost");
+    console.log(res);
+    var res = str.replace(/ clara | water | fountain /gi, function(x){return x.toUpperCase();});
+    console.log(res);
+  </script>
+</head>
+<body></body>
+</html>
