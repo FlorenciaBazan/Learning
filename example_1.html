@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example 1</title>
+  <meta charset="utf-8">
+  <script>
+
+    var names = "Pedro Picapiedra; Pablo Marmol; Roger Federer; Rafael Nadal; Andy Murray";
+
+    var exit = ["Original string: "+names];
+
+    var re = /\s*;\s*/;
+
+    var names_array = names.split(re);
+
+    exit.push("Names separated: "+names_array.join("; "));
+
+    var re = /(\w+)\s+(\w+)/;
+
+    var inverted_names = new Array();
+    for (var i = 0; i < names_array.length; i++) {
+      inverted_name = names_array[i].replace(re,"$2, $1");
+      inverted_names.push(inverted_name);
+    }
+    exit.push("Names inverted: "+inverted_names.join("; "));
+
+    inverted_names.sort();
+    exit.push("Names alphabetical: "+inverted_names.join("; "));
+    console.log(exit);
+  </script>
+</head>
+  <body></body>
+</html>
