@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax 02</title>
+  <script>
+    function uploadFile(){
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+        alert("if it supports");
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        alert("don't support");
+      }
+      xmlhttp.open("GET","ajax.txt",true);
+      xmlhttp.send();
+    }
+  </script>
+</head>
+<body>
+  <div id="exit"><h2>Press the file button to read the text with JAX</h2></div>
+  <button onclick="uploadFile()">Upload File</button>
+</body>
+</html>
