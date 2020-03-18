@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example 3</title>
+	<meta charset="utf-8">
+	<script>
+		function numberFormat(number, decimals, decimalDivider, thousandDivider) {
+			number = parseFloat(number);
+			if(isNaN(number)) return "";
+			// verify the attributes
+			if(decimals !== undefined) number = number.toFixed(decimals);
+			// convert the dot on decimal divider
+			number = number.toString().replace(".", decimalDivider !== undefined ? decimalDivider : ",");
+			if(thousandDivider){
+				// Add thousand divider
+				var thousand = new RegExp("(-?[0-9]+)([0-9]{3})");
+				while(thousand.test(number)){
+					number = number.replace(thousand, "$1" + thousandDivider + "$2");
+				}
+			}
+			//return result
+			return number;
+		}
+		alert(numberFormat(312313123456789.90,2,".",","));
+	</script>
+</head>
+  <body></body>
+</html>
