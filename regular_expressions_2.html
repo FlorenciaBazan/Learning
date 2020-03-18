@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    var str = "First line\nSecond line";
+    var regex = /(\S+) line\n?/y;
+
+    var match = regex.exec(str);
+    console.log(match);  //  "first"
+    console.log(regex.lastIndex); //  14
+
+    var match2 = regex.exec(str);
+    console.log(match2); //  "second"
+    console.log(regex.lastIndex); //  "27"
+
+    var match3 = regex.exec(str);
+    console.log(match3); //  null
+  </script>
+</head>
+  <body></body>
+</html>
