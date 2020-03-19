@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax 03</title>
+  <script>
+    function countriesList(p){
+      if(p.length == 0){
+        document.getElementById("suggestions").innerHTML="";
+        return;
+      }
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.open("GET","countries.php?q=" + p,true);
+      xmlhttp.send();
+      xmlhttp.onreadystatechange=function(){
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        document.getElementById("suggestions").innerHTML = xmlhttp.responseText;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<h3>Click for the country</h3>
+<form action="">
+country:<input type="text" id="country" onkeyup="countriesList(this.value)"/>
+</form>
+<p>suggestions: <span id="suggestions"></span></p>
+</body>
+</html>
