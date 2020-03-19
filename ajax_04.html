@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax 03</title>
+  <script>
+    function uploadFile(){
+      var xmlhttp;
+      if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.open("GET","ajax.txt",true);
+      xmlhttp.send();
+      xmlhttp.onreadystatechange=function(){
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+        document.getElementById("exit").innerHTML = xmlhttp.responseText;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="exit"><h2>Press the file button to read the text with JAX</h2></div>
+  <button onclick="uploadFile()">Upload File</button>
+</body>
+</html>
